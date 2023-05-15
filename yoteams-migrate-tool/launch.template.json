@@ -11,7 +11,7 @@
       "trace": true,
       "runtimeArgs": [
           "--disable-extensions"
-      ],
+      ]
     },
     {
       "name": "Attach to Frontend (Edge)",
@@ -36,7 +36,7 @@
         "group": "all",
         "order": 1
       },
-      "stopAll": true,
+      "stopAll": true
     },
     {
       "name": "Debug (Edge Teams)",
@@ -49,6 +49,6 @@
           "order": 2
       },
       "stopAll": true
-    },
+    }
   ]
 }
