@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch localhost (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3007/yotabTab",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "trace": true,
+      "runtimeArgs": [
+          "--disable-extensions"
+      ],
+    },
+    {
+      "name": "Attach to Frontend (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "https://teams.microsoft.com/l/app/${{local:APPLICATION_ID}}?installAppPackage=true&webjoin=true&${account-hint}",
+      "presentation": {
+          "group": "all",
+          "hidden": true
+      },
+      "internalConsoleOptions": "neverOpen"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug (Edge)",
+      "configurations": [
+        "Launch localhost (Edge)"
+      ],
+      "preLaunchTask": "Start Tab App Locally",
+      "presentation": {
+        "group": "all",
+        "order": 1
+      },
+      "stopAll": true,
+    },
+    {
+      "name": "Debug (Edge Teams)",
+      "configurations": [
+          "Attach to Frontend (Edge)"
+      ],
+      "preLaunchTask": "Start Teams App Locally",
+      "presentation": {
+          "group": "all",
+          "order": 2
+      },
+      "stopAll": true
+    },
+  ]
+}
