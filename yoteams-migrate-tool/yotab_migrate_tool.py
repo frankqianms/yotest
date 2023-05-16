@@ -40,7 +40,7 @@ shutil.copy("../src/manifest/icon-color.png", "../appPackage/icon-color.png")
 
 # modify package.json
 with open("../package.json", 'r') as f:
-    packages = f.readlines
+    packages = f.readlines()
 flag = False
 line_cnt = 0
 for package in packages:
