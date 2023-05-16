@@ -61,7 +61,7 @@ with open("../gulpfile.js", 'r') as f:
 line_cnt = 0
 for line in lines:
     if line.find("require(\"dotenv\").config()") != -1:
-        lines[line_cnt].replace("require(\"dotenv\").config()", "require(\"dotenv\").config({ path: \".env.local\" })")
+        lines[line_cnt] = "    require(\"dotenv\").config({ path: path.resolve(process.cwd(), \"env\", \".env.local\") });\n"
         break
     line_cnt += 1
 with open("../gulpfile.js", 'w') as f:
